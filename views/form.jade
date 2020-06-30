@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1= "Create a new playlist"
+    form(method="POST", action='/postForm')
+        .form-group
+            label(for="enterPlays") How many plays?
+            select#enterPlays(name="enterPlays",)
+                each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+                    if val===5
+                        option(value=val selected) #{val}
+                    else 
+                        option(value=val) #{val}
+            br
+            label(for="enterYears") How many years since the last play?
+            select#enterYears(name="enterYears")
+                each val in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    if val===5
+                        option(value=val selected) #{val}
+                    else 
+                        option(value=val) #{val}
+            br
+            label(for="enterLength") How many tracks?
+            select#enterLength(name="enterLength", selected = "25")
+                each val in [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+                    if val===25
+                        option(value=val selected) #{val}
+                    else 
+                        option(value=val) #{val}
+            br
+        button.btn.btn-primary(type='submit') Submit
+
+    hr
